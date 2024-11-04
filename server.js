@@ -8,8 +8,7 @@ import salaryRouter from './Routes/salary_route.js';
 import leaveRouter from './Routes/leave_route.js';
 import settingRouter from './Routes/setting_route.js';
 import dashboardRouter from './Routes/dashboard_route.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
+
 
 
 
@@ -27,7 +26,11 @@ const app = express();
 
 
 
-app.use(cors());
+app.use(cors({
+    origin:"https://employee-client-tau.vercel.app",
+    credentials:true
+}));
+
 app.use(express.json());
 app.use(express.static('public/uploads'))
 
